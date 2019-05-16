@@ -1,0 +1,9 @@
+﻿@{
+    if (Context.User.Identity.IsAuthenticated)
+    {
+    <div>
+        Welcome @Session["FirstName"]&nbsp;@Session["LastName"]&nbsp;[@Html.ActionLink("LogOff", "LogOff", "Account")]
+    </div>
+    }
+    
+    }   

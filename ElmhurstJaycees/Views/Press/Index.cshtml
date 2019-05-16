@@ -1,0 +1,17 @@
+﻿@model IEnumerable<ElmhurstJaycees.Models.Press>
+@{
+    ViewBag.Title = "Press Releases";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    if (Context.User.Identity.IsAuthenticated)
+    {
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>    
+    }
+    foreach (ElmhurstJaycees.Models.Press p in ViewData.Model)
+    {
+        Html.RenderPartial("PressRelease", p);
+    }
+}

@@ -1,0 +1,30 @@
+﻿<ul id="nav">
+    @{
+        var controller = (ViewContext.RouteData.Values["controller"] as string ?? "Home").ToLower();
+        var action = (ViewContext.RouteData.Values["action"] as string ?? "Index").ToLower();
+        var page = (controller + ":" + action);
+   
+        <li>@Html.ActionLink("Home", "Index", "Home", null, new { style = page == "home:index" ? "color:#3b5e0b;" : "" })</li>
+        <li>@Html.ActionLink("About", "Index", "About", null, new { style = page == "about:index" ? "color:#3b5e0b;" : "" })</li>
+        <li>@Html.ActionLink("Charity", "Index", "Charity", null, new { style = controller == "charity" ? "color:#3b5e0b;" : "" })</li>
+        <li>@Html.ActionLink("Board", "Members", "Board", null, new { style = controller == "board" ? "color:#3b5e0b;" : "" })</li>
+        <li>@Html.ActionLink("Photos", "Photos", "Default", null, new { style = controller == "default" ? "color:#3b5e0b;" : "" })</li>
+        <li>@Html.ActionLink("Press", "Index", "Press", null, new { style = page == "press:index" ? "color:#3b5e0b;" : "" })</li>        
+        <li>@Html.ActionLink("Events", "Events", "Event", null, new { style = controller == "event" ? "color:#3b5e0b;" : "" })</li>
+        <li>@Html.ActionLink("Files/Forms", "Index", "File", null, new { style = controller == "file" ? "color:#3b5e0b;" : "" })</li>
+        
+       
+       
+        <li>@Html.ActionLink("Members Area", "Logon", "Account", null, new { style = controller == "account" ? "color:#3b5e0b;" : "" })
+            @{
+                if (Context.User.Identity.IsAuthenticated)
+                {
+                <ul class="nav first" style="border:1px solid #696969;">
+                    <li>@Html.ActionLink("Minutes", "Index", "Minute", null, new { style = (controller == "minute" ? "color:#3b5e0b;" : "") + "background:none;" })</li>
+                    <li>@Html.ActionLink("Members", "Index", "Member", null, new { style = (controller == "member" ? "color:#3b5e0b;" : "") + "background:none;" })</li>
+                </ul>
+                } 
+            }
+        </li>
+    }
+</ul>

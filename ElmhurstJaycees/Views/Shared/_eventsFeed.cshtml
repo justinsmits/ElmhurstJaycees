@@ -1,0 +1,16 @@
+﻿@model IEnumerable<ElmhurstJaycees.Models.Event>
+<div id="eventsFeed" class="eventsFeed">
+<strong>Upcoming Events</strong>
+<br />
+        @{
+            Int32 i = 0;
+            foreach (var e in Model)
+            {
+                if (i < 3)
+                {
+                @Html.ActionLink(String.Format("{0} - {1}", e.Date.Value.ToShortDateString(), e.Name), "Event", "Event", new { id = e.EventID }, new { style = "color:blue;font-family:verdana;font-size:8pt;" })
+                <br />
+                }
+            }
+        }
+</div>

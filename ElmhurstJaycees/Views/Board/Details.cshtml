@@ -1,0 +1,19 @@
+﻿@model ElmhurstJaycees.Models.Minute
+<div>
+    @{
+        if (Context.User.Identity.IsAuthenticated)
+        {
+        <p>
+            @Html.ActionLink("Delete", "Delete", new { id = @Model.Id })
+        </p>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { memberId = @Model.Id })
+        </p>   
+        }
+    }
+    <p>
+        Meeting Date: @Model.MeetingDate</p>
+    <div>
+        @MvcHtmlString.Create(@Model.MeetingMinutes)
+    </div>
+</div>

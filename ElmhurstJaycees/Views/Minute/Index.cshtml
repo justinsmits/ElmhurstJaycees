@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ElmhurstJaycees.Models.Minute>
+@{
+    ViewBag.Title = "All Meeting Minutes";
+}
+<h2>
+    All Meeting Minutes</h2>
+@{
+    if (User.Identity.IsAuthenticated)
+    {
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p> 
+    }
+    foreach (ElmhurstJaycees.Models.Minute m in ViewData.Model)
+    {
+        Html.RenderPartial("Details", m);
+    }
+}

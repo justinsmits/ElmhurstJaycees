@@ -1,0 +1,32 @@
+﻿@model ElmhurstJaycees.Models.About
+@{
+    ViewBag.Title = "Edit About";
+}
+<h2>
+    Edit About</h2>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>About</legend>
+        @Html.HiddenFor(model => model.Id)
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Content)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Content, new { cols = 50, @rows = 15 })
+            @Html.ValidationMessageFor(model => model.Content)
+        </div>
+        <p>
+            <input type="submit" value="Save" class="defaultButton" />
+        </p>
+    </fieldset>
+}
+<script type="text/javascript">
+    $("#Content").htmlarea()
+</script>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

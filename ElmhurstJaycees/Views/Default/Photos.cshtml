@@ -1,0 +1,42 @@
+﻿@model List<ElmhurstJaycees.Models.File>
+@{
+    ViewBag.Title = "Photos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if(Context.User.Identity.IsAuthenticated) {
+     <div>
+        If you would like to upload additional photos, go to Files/Forms and hit "Create New." Upload a picture (try to make sure it's not more than 500 kb), 
+        give it a Title and be sure to check the Public and Photo checkboxes.
+     </div>   
+    }
+}
+<script type="text/javascript">
+    function showPicture(id, title) {
+        var picDiv = $('#pic');
+        picDiv.fadeIn('slow');
+        var img = $('#bigPic');
+        img.attr('src', '/FileHelper/RenderFile/?fileID=' + id);
+        $('#picTitle').text(title);
+    }
+    function hidePicture() {
+        $('#pic').fadeOut('slow');
+    }
+</script>
+<h2>Photo Gallery</h2>
+<ul class="thumbnails">
+    @foreach (var photo in Model)
+    {
+        var imgLink = @Url.Content("~/FileHelper/RenderFile/?fileID=" + photo.FileID);
+        <li class="item" onclick="javascript:showPicture(@photo.FileID,'@photo.Title')">
+            <a href="#">
+            <img src="@imgLink" alt="@photo.FileName" width="160px" />
+            <span class="image-overlay">@photo.Title</span></a> </li>
+    }
+</ul>
+<div id="pic" style="position:absolute;display:none;border:2px solid #696969;width:715px;text-align:center;padding:20px;background-color:#696969;z-index:2000;border-radius: 7px;
+            -moz-border-radius: 7px;
+            -webkit-border-radius:7px;">
+    <img alt="Close" src="../../Content/Main/images/close.png" style="position: absolute;
+        top: -5px; right: -5px;padding:0;width:16px;border-width:0px;" onclick="javascript:hidePicture();" />
+        <div id="picTitle" style="font-family:Calibri;font-size:large;font-weight:bold;color:White;"></div>
+    <img id="bigPic" alt="" src="" style="max-width:700px;" />
+</div>

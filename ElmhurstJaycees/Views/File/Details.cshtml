@@ -1,0 +1,30 @@
+﻿@model ElmhurstJaycees.Models.File
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>File</legend>
+
+    <div class="display-label">FileName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FileName)
+    </div>
+
+    <div class="display-label">Length</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Length)
+    </div>
+
+    <div class="display-label">Extension</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Extension)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.FileID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

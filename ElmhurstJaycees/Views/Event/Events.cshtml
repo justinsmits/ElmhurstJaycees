@@ -1,0 +1,25 @@
+﻿@model IEnumerable<ElmhurstJaycees.Models.Event>
+@{
+    ViewBag.Title = "Events";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    IEnumerable<ElmhurstJaycees.Models.Event> events;
+
+    if (Context.User.Identity.IsAuthenticated)
+    {
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+   events = ViewData.Model;
+    }
+    else
+    {
+        DateTime d = System.DateTime.Now;
+        events = ViewData.Model.Where(e => e.DisplayStartDate < d && e.DisplayEndDate > d);
+    }
+    foreach (ElmhurstJaycees.Models.Event e in events)
+    {
+        Html.RenderPartial("Event", e);
+    }
+}

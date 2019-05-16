@@ -1,0 +1,28 @@
+﻿@model ElmhurstJaycees.Models.Minute
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Minute</legend>
+
+    <div class="display-label">MeetingDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MeetingDate)
+    </div>
+
+    <div class="display-label">MeetingMinutes</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MeetingMinutes)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" class="defaultButton" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,32 @@
+﻿@model ElmhurstJaycees.Models.Event
+<div style="margin: 15px 20px 15px 15px;width:100%;">
+    <div>
+        @{
+            if (Context.User.Identity.IsAuthenticated)
+            {
+                <div>
+                    @Html.ActionLink("Edit", "Edit", new { eventid = Model.EventID })
+                </div>
+                <div>
+                    @Html.ActionLink("Delete", "Delete", new { id = Model.EventID })
+                </div>
+            }
+        }
+        <div>
+            @{
+                <h1>@Model.Name</h1>
+                <p>@Model.Date.Value</p>
+                if (!(@Model.FileID == null))
+                {
+                    <img src="@Url.Content("~/FileHelper/RenderFile/?fileID=" + @Model.FileID)" alt="@Model.File.FileName" style="margin-left:20px;" />
+                }
+                if (!String.IsNullOrWhiteSpace(@Model.Description))
+                {
+                    <p>
+                        @MvcHtmlString.Create(Model.Description)
+                    </p>
+                }
+            }
+        </div>
+    </div>
+</div>

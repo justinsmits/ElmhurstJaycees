@@ -1,0 +1,35 @@
+﻿@model ElmhurstJaycees.Models.Home
+@{
+    ViewBag.Title = "Elmhurst Jaycees";
+    Layout = "~/Views/Shared/_LayoutSidebar.cshtml";
+}
+@{
+    if (Context.User.Identity.IsAuthenticated)
+    {
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = @Model.Id })
+    </p>    
+    }
+}
+<script type="text/javascript">
+    clippy.load('Merlin', function (agent) {
+        // Do anything with the loaded agent
+        agent.show();
+    });
+</script>
+<div align="center">
+ @{
+     if(!String.IsNullOrWhiteSpace(@Model.Title)){
+         <h2>@Model.Title</h2>
+     }
+    
+        if (@Model.FileId.HasValue)
+        {
+        <img src="@Url.Content("~/FileHelper/RenderFile/?fileID=" + @Model.FileId)" alt="@Model.File.FileName" />
+        }
+        if (!string.IsNullOrWhiteSpace(@Model.Content))
+        {
+        @MvcHtmlString.Create(Model.Content)   
+        }
+    }
+</div>

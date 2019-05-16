@@ -1,0 +1,42 @@
+﻿@model ElmhurstJaycees.Models.Board
+<div style="margin: 15px 20px 15px 15px;">
+    <table style="border:0px;">
+        <tr>
+            @{
+                if (Context.User.Identity.IsAuthenticated)
+                {
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = @Model.MemberID })
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { memberId = @Model.MemberID })
+                    </td>
+                }
+            }
+            <td>
+                @{
+                    if (!(@Model.File == null))
+                    {
+                        <img src="@Url.Content("~/FileHelper/RenderFile/?fileID=" + @Model.FileID)" alt="@Model.File.FileName" width="100px" />
+                    }
+                    else
+                    {
+                        //nothing yet
+                    }
+                }
+
+            </td>
+            <td>
+                <h2>@Model.Member.FirstName&nbsp;@Model.Member.LastName</h2>
+                <h3>@Model.Title</h3>
+                <p>@MvcHtmlString.Create(Model.Description)</p>
+                @{
+                    if (Context.User.Identity.IsAuthenticated)
+                    {
+                        <p>Order: @Model.ORDER</p>
+                    }
+                }
+            </td>
+        </tr>
+    </table>
+</div>

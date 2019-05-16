@@ -1,0 +1,30 @@
+﻿@model ElmhurstJaycees.Models.Press
+<div style="margin: 15px 20px 15px 15px;width:100%;">
+    <div>
+            @{
+                Int32 pressId = @Model.Id;
+                if(Context.User.Identity.IsAuthenticated) {
+                 <div>
+                   @Html.ActionLink("Edit", "Edit", new { id = pressId})
+                 </div>   
+                }
+            }
+            <div>
+            @{
+                if(!String.IsNullOrEmpty(@Model.Title)) {
+                    <h1>@Model.Title</h1>
+                }
+                
+                if(!(@Model.FileID == null)) {
+                    <img src="@Url.Content("~/FileHelper/RenderFile/?fileID=" + @Model.FileID)" alt="@Model.File.FileName" style="margin-left:20px;" />
+                }
+                if (!String.IsNullOrWhiteSpace(@Model.Content))
+                {
+                 <p>
+                    @MvcHtmlString.Create(Model.Content)
+                 </p>   
+                }
+            }
+                </div>
+    </div>
+</div>

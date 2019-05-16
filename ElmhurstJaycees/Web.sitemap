@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.google.com/schemas/sitemap/0.84">
+  <url>
+    <loc>http://www.elmhurstjaycees.com</loc>
+    <lastmod>2012-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>http://www.elmhurstjaycees.com/home/index</loc>
+    <lastmod>2012-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>http://www.elmhurstjaycees.com/about</loc>
+    <lastmod>2012-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.elmhurstjaycees.com/charity</loc>
+    <lastmod>2012-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.elmhurstjaycees.com/board/members</loc>
+    <lastmod>2012-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.elmhurstjaycees.com/press</loc>
+    <lastmod>2012-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.elmhurstjaycees.com/event/events</loc>
+    <lastmod>2012-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>http://www.elmhurstjaycees.com/file</loc>
+    <lastmod>2012-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.elmhurstjaycees.com/account/logon</loc>
+    <lastmod>2012-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.elmhurstjaycees.com/default/megapassorder</loc>
+    <lastmod>2012-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.elmhurstjaycees.com/contact</loc>
+    <lastmod>2012-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://www.elmhurstjaycees.com/file/</loc>
+    <lastmod>2012-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+
+    <priority>0.5</priority>
+  </url>
+</urlset>

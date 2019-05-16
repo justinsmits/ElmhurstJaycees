@@ -1,0 +1,25 @@
+﻿@model ElmhurstJaycees.Models.Contact
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Contact</legend>
+
+    <div class="display-label">File</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.File.FileName)
+    </div>
+
+    <div class="display-label">Content</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Content)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

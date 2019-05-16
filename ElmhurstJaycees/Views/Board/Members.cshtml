@@ -1,0 +1,20 @@
+﻿@model IEnumerable<ElmhurstJaycees.Models.Board>
+@{
+    ViewBag.Title = "Board Members";
+}
+<h2>
+    Board Members</h2>
+@{
+    if (Context.User.Identity.IsAuthenticated)
+    {
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>    
+    }
+    
+    System.Collections.Generic.IEnumerable<ElmhurstJaycees.Models.Board> boardMembers = ViewData.Model;
+    
+    foreach(ElmhurstJaycees.Models.Board b in boardMembers) {
+        Html.RenderPartial("BoardMember", b);
+    }
+}

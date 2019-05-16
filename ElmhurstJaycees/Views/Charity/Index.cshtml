@@ -1,0 +1,13 @@
+﻿@model ElmhurstJaycees.Models.Charity
+@{
+    ViewBag.Title = "Charity";
+    Layout = "~/Views/Shared/_LayoutSidebar.cshtml";
+    if (Context.User.Identity.IsAuthenticated)
+    {
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { Id = @Model.Id })
+    </p> 
+    }
+}
+<h2>@Model.Title</h2>
+@MvcHtmlString.Create(Model.Content)
